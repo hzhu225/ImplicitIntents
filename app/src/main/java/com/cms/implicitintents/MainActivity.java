@@ -2,6 +2,7 @@ package com.cms.implicitintents;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity
 
     private EditText urlEditText;
     private EditText locationEditText;
-
+    private EditText shareEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         urlEditText = findViewById(R.id.url_editText);
         locationEditText = findViewById(R.id.location_editText);
+        shareEditText = findViewById(R.id.share_editText);
     }
 
     public void openWebsite(View view)
@@ -55,5 +57,14 @@ public class MainActivity extends AppCompatActivity
 
     public void shareText(View view)
     {
+        String shareContent = shareEditText.getText().toString();
+        String mimeType = "text/plain";
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setType(mimeType)
+                .setChooserTitle("Share this text with")
+                .setText(shareContent)
+                .startChooser();
+
     }
 }
