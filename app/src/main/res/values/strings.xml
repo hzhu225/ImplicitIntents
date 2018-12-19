@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Implicit Intents</string>
+
+    <string name="uri_Text">http://cmssurveyors.com.au</string>
+    <string name="uri_Button">Open Website</string>
+
+    <string name="location_Text">Sydney Harbour Bridge</string>
+    <string name="location_Button">Open Location</string>
+
+    <string name="share_Text">\Ionia shall not fall </string>
+    <string name="share_Button">Share This Text</string>
+
+</resources>
+
