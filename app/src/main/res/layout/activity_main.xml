@@ -13,7 +13,6 @@
         android:id="@+id/url_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textUri"
         android:text="@string/uri_Text" />
 
@@ -29,7 +28,6 @@
         android:id="@+id/location_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="none"
         android:text="@string/location_Text" />
 
@@ -45,7 +43,6 @@
         android:id="@+id/share_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="text"
         android:text="@string/share_Text" />
 
