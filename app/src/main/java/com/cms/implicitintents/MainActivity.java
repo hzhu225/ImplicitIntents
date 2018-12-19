@@ -12,12 +12,16 @@ public class MainActivity extends AppCompatActivity
 {
 
     private EditText urlEditText;
+    private EditText locationEditText;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         urlEditText = findViewById(R.id.url_editText);
+        locationEditText = findViewById(R.id.location_editText);
     }
 
     public void openWebsite(View view)
@@ -33,11 +37,20 @@ public class MainActivity extends AppCompatActivity
         {
             Log.d("ImplicitIntents", "Can't handle this!");
         }
-
     }
 
     public void openLocation(View view)
     {
+        String locationContent = locationEditText.getText().toString();
+        Uri geoUri = Uri.parse("geo:0,0?q=" + locationContent);
+        Intent intent = new Intent(Intent.ACTION_VIEW, geoUri);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+        else
+        {
+            Log.d("ImplicitIntents", "Can't handle this intent!");
+        }
     }
 
     public void shareText(View view)
